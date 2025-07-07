@@ -1,0 +1,13 @@
+<% include layout.ejs %>
+<h2>Add Exercise</h2>
+<form method="post" action="/exercise/add">
+  <div class="mb-3">
+    <label>Name</label>
+    <input type="text" name="name" class="form-control" required>
+  </div>
+  <div class="mb-3">
+    <label>Category</label>
+    <input type="text" name="category" class="form-control">
+  </div>
+  <button class="btn btn-primary" type="submit">Add</button>
+</form>
