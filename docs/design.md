@@ -6,12 +6,12 @@ This document outlines a high level plan to build a web-based gym tracking appli
 - **Frontend:** Next.js (React) for a modern SPA with server-side rendering.
 - **Backend:** Node.js with Express for REST APIs.
 - **Database:** PostgreSQL via an ORM like Prisma or Sequelize.
-- **Authentication:** email/password and optional Google OAuth (using Passport.js).
+- **Authentication:** email/password accounts created by an administrator.
 - **Hosting:** Vercel or Railway for backend and frontend deployments.
 
 ## Core Features
 1. **User Accounts**
-   - Individual login via email/password or Google.
+   - Individual login via email/password. Accounts are created by an administrator.
    - Each user stores their own data in the database.
 
 2. **Exercise Management**

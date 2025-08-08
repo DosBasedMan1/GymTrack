@@ -78,30 +78,10 @@ app.get('/', ensureAuth, (req, res) => {
   });
 });
 
-app.get('/register', (req, res) => {
-  res.render('register', { messages: req.flash('error') });
-});
-
-app.post('/register', (req, res, next) => {
-  const { email, password } = req.body;
-  bcrypt.hash(password, 10, (err, hash) => {
-    if (err) return next(err);
-    db.run('INSERT INTO users (email, password) VALUES (?, ?)', [email, hash], function(err) {
-      if (err) {
-        req.flash('error', 'User exists');
-        return res.redirect('/register');
-      }
-      req.login({ id: this.lastID, email }, (err) => {
-        if (err) return next(err);
-        res.redirect('/');
-      });
-    });
+  // Accounts are provisioned externally; no public registration route.
+  app.get('/login', (req, res) => {
+    res.render('login', { messages: req.flash('error') });
   });
-});
-
-app.get('/login', (req, res) => {
-  res.render('login', { messages: req.flash('error') });
-});
 
 app.post('/login', passport.authenticate('local', {
   successRedirect: '/',
