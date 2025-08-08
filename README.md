@@ -13,7 +13,11 @@ This repository contains an example implementation of a simple workout tracker b
    ```bash
    npm start
    ```
-3. Visit `http://localhost:3000` in your browser to register and log workouts.
+3. Create user accounts manually:
+   ```bash
+   node create-user.js <email> <password>
+   ```
+4. Visit `http://localhost:3000` in your browser and log in.
 
 Data will be stored locally in `gymtrack.db`.
 
